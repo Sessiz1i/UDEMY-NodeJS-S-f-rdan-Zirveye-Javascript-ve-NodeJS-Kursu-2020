@@ -1,0 +1,19 @@
+<%- include("../partials/_header") %>
+<div class="columns is-multiline">
+    <% makaleler.forEach((makale,index) => { %>
+
+        <div class="column is-4">
+            <%- include("../partials/makale_card",{makale,index}) %>
+        </div>
+    <% }) %>
+
+</div>
+<%
+ const tumSayfa = sayfalama['x-wp-totalpages'];
+ const tumMakale = sayfalama['x-wp-total'];
+ %>
+    <div class="block"></div>
+    <div class="box">
+        <%- include("../partials/pagination",{tumSayfa,tumMakale,aktifSayfa}) %>
+    </div>
+    <div class="block"></div>

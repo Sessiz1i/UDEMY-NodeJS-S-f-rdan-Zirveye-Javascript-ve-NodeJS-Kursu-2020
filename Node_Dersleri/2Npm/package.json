@@ -1,0 +1,17 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "Npm Dersleri",
+  "main": "app.js",
+  "scripts": {
+    "test": "First Npm",
+    "start": "node app.js --help"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "yargs": "^15.4.1"
+  },
+  "devDependencies": {}
+}

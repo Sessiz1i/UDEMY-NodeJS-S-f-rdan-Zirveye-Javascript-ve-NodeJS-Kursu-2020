@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Js Dersleri</title>
+    <link rel="stylesheet" href="../asset/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../asset/css/dataTables.bootstrap5.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+    <style> body {
+        font-family: 'Nunito', sans-serif;
+    } </style>
+</head>
+<body>
+<h3 class="text-center"><strong class="text-success">Mouse Eventleri</strong></h3>
+<div class="col-7 mx-auto bg-warning text-center p-5">
+    <h1><a class="link-danger" href="http://www.google.com.tr/">Java Dersleri</a></h1>
+    <div class="p-5">
+        <strong style="font-size: 25px">Merhaba</strong>
+    </div>
+</div>
+<pre>
+    // Mouse tıklama eventleri
+    document.querySelector('a').addEventListener('click',event)
+    document.querySelector('a').addEventListener('dblclick',event)
+    document.querySelector('a').addEventListener('mousedown',event)
+    document.querySelector('a').addEventListener('mouseup',event)
+
+    // Mouse Hareket eventleri - Üzerine geldiğinde
+
+    document.querySelector('a').addEventListener('mouseover',event)
+    document.querySelector('a').addEventListener('mouseenter',event)
+
+    // Mouse Hareket eventleri - Üzerine ayrıldığında
+
+    document.querySelector('a').addEventListener('mouseout',event)
+    document.querySelector('a').addEventListener('mouseleave',event)
+
+    // Mouse Hareket eventleri - Üzerinde hareket ettiğinde
+
+    document.querySelector('a').addEventListener('mousemove',event)
+</pre>
+</body>
+<script>
+    // Mouse tıklama eventleri
+    document.querySelector('a').addEventListener('click',event)
+    document.querySelector('a').addEventListener('dblclick',event)
+    document.querySelector('a').addEventListener('mousedown',event)
+    document.querySelector('a').addEventListener('mouseup',event)
+    // Mouse Hareket eventleri - Üzerine geldiğinde
+    document.querySelector('a').addEventListener('mouseover',event)
+    document.querySelector('a').addEventListener('mouseenter',event)
+    // Mouse Hareket eventleri - Üzerine ayrıldığında
+    document.querySelector('a').addEventListener('mouseout',event)
+    document.querySelector('a').addEventListener('mouseleave',event)
+    // Mouse Hareket eventleri - Üzerinde hareket ettiğinde
+    document.querySelector('a').addEventListener('mousemove',event)
+
+
+    function event(e) {
+        let deger;
+        deger = "Mouse Event: "+e.type;
+        console.log(deger)
+        e.preventDefault()
+    }
+
+</script>
+</html>
+

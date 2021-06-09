@@ -1,0 +1,5 @@
+CPU Adı:  AMD FX(tm)-8150 Eight-Core Processor           
+CPU Sayısı: 8
+Toplam RAM: 16 GB
+Boş RAM: 9 GB
+Kulanılan RAM: 7 GB

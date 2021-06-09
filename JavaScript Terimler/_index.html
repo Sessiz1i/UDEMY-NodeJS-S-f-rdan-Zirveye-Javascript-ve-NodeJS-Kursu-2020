@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Js Dersleri</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+    <style> body {
+        font-family: 'Nunito';
+
+    } </style>
+
+</head>
+<body>
+<div class="continer">
+    <div class="card-title py-2">
+        <h1 class="text-center "><strong class="text-success">JavaScript Dersi</strong></h1>
+    </div>
+    <div class="parent bg-info">
+        <div class="child bg-warning">
+            <h3 style="cursor: pointer" class="item child-item text-center">Local ve Session Storage</h3>
+        </div>
+    </div>
+    <form class="row mx-auto">
+        <div class="col-auto">
+            <input type="text" name="isim" class="form-control" id="" placeholder="İçerik...">
+            <strong id="error" class="text-danger" role="alert"></strong>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-outline-success">Kaydet</button>
+        </div>
+    </form>
+    <div class="p-3">
+        <h2>İsim listesi</h2>
+    </div>
+    <ul class="liste"></ul>
+</div>
+
+<pre>
+
+</pre>
+
+</body>
+<script type="text/javascript">
+    const ulList = document.querySelector(".liste");
+    let isimDizisi = JSON.parse(localStorage.getItem("isimler"));
+    if (isimDizisi){
+        isimDizisi.forEach(isim => {
+            const yeniLi = document.createElement("li");
+            yeniLi.textContent = isim;
+            ulList.appendChild(yeniLi);
+        })
+    }
+
+
+    document.querySelector("form").addEventListener("submit", e => {
+        const yeniIsim = document.querySelector("input").value;
+        let isimDizisi;
+
+        if (yeniIsim !== ""){
+            document.querySelector("#error").textContent = "";
+            (localStorage.getItem("isimler") == null)
+                ? isimDizisi = []
+                : isimDizisi = JSON.parse(localStorage.getItem("isimler"));
+
+            isimDizisi.push(yeniIsim)
+
+            localStorage.setItem("isimler", JSON.stringify(isimDizisi));
+            const yeniLi = document.createElement("li");
+            yeniLi.textContent = yeniIsim;
+            ulList.appendChild(yeniLi);
+        }else{
+           document.querySelector("#error").textContent = "Lütfen bir isim giriniz.";
+        }
+
+        e.preventDefault();
+    })
+
+
+</script>
+
+
+</html>
+

@@ -1,0 +1,11 @@
+<nav class="pagination" role="navigation" aria-label="pagination">
+    <a class="pagination-previous">Önceki</a>
+    <a class="pagination-next">Sonraki</a>
+    <ul class="pagination-list">
+        <% for( let index = 1; index <= tumSayfa; index++ ) { %>
+            <li>
+                <a href="/blog?page=<%=index%>" class="pagination-link <%= (index === aktifSayfa) ? 'is-current' : '' %>" aria-label="Goto page"><%- index%></a>
+            </li>
+        <% } %>
+    </ul>
+</nav>
